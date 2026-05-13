@@ -1,0 +1,18 @@
+package com.example.prueba.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@CrossOrigin
+@Controller
+@RequestMapping(value = "/api")
+public class PruebaController {
+
+    @ResponseStatus(value = org.springframework.http.HttpStatus.OK)
+    @GetMapping(value = "/pet", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<String> obtenerInformacion() {
+
+        return ResponseEntity.ok().body("success");
+    }
+}
