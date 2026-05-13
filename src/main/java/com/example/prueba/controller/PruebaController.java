@@ -28,6 +28,11 @@ public class PruebaController {
     @Autowired
     PruebaService service;
 
+    @PostConstruct
+    public void init() {
+        System.out.println("PruebaController initialized");
+    }
+
     @GetMapping(value = "/{petId}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<ResponseDto> obtenerInformacion(@PathVariable final Integer petId) {
 
@@ -35,7 +40,12 @@ public class PruebaController {
         return ResponseEntity.ok().body(response);
     }
 
-    @PostMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/test", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<String> test() {
+        return ResponseEntity.ok().body("{\"message\": \"API is working\"}");
+    }
+
+    @PostMapping(value = "/cut-push", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<MessageDto> orquesta(@RequestBody final RequestDto req) {
         MessageDto response = service.crearInfo(req);
         return ResponseEntity.ok().body(response);
