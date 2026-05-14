@@ -1,13 +1,12 @@
 package com.example.prueba;
 
+import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import net.bytebuddy.implementation.bind.annotation.IgnoreForBinding;
 
 @SpringBootTest
 class PruebaApplicationTests {
 
-	@IgnoreForBinding
+	@Test
 	void contextLoads() {
 	}
 

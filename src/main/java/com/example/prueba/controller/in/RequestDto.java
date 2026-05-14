@@ -13,7 +13,7 @@ import lombok.Setter;
 @NoArgsConstructor
 public class RequestDto {
     
-    private Integer petId;
+    private Integer id;
     private String name;
     private String status;
 }

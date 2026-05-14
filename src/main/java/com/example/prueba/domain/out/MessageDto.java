@@ -1,6 +1,6 @@
 package com.example.prueba.domain.out;
 
-import java.sql.Date;
+import java.util.Date;
 
 import lombok.Data;
 
